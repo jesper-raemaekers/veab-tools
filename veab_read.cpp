@@ -16,7 +16,7 @@ void printHelp()
 
 void getVeab(const unsigned int bus, const unsigned int channel)
 {
-    const float resolution = 0.00245; // 2.45mV/bit, from design doc
+    const float resolution = 0.00245117; // 2.45mV/bit, from design doc
     unsigned int adcReadValue = 0;
     float adcResult = 0.0;
     int file;
@@ -43,6 +43,7 @@ void getVeab(const unsigned int bus, const unsigned int channel)
 
     if (write(file, buf, 3) != 3) {
         std::cout << "Writing IO config failed" << std::endl;
+        exit(1);
     }
 
     buf[0] = 0x08;
@@ -51,10 +52,12 @@ void getVeab(const unsigned int bus, const unsigned int channel)
 
     if (write(file, buf, 3) != 3) {
         std::cout << "Writing next channel failed" << std::endl;
+        exit(1);
     }
 
     if (read(file, buf, 2) != 2) {
         std::cout << "Read channel sample failef" << std::endl;
+        exit(1);
     }
 
     // bits 15-4 contain the data
@@ -64,7 +67,7 @@ void getVeab(const unsigned int bus, const unsigned int channel)
     adcReadValue |= (buf[1] >> 4) & 0xF;
 
     adcResult = adcReadValue * resolution;
-    std::cout << "Read adc value " << adcReadValue << " is " << std::setprecision(3) << adcResult << std::endl;
+    std::cout << std::setprecision(3) << adcResult << std::endl;
 }
 
 

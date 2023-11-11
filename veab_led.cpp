@@ -42,6 +42,7 @@ void setLed(const unsigned int bus, const unsigned int color)
 
     if (write(file, buf, 3) != 3) {
         std::cout << "Writing IO config failed" << std::endl;
+        exit(1);
     }
 
     // setting GPIO 4, 5, 6 as digital outputs
@@ -51,6 +52,7 @@ void setLed(const unsigned int bus, const unsigned int color)
 
     if (write(file, buf, 3) != 3) {
         std::cout << "Writing IO config failed (2)" << std::endl;
+        exit(1);
     }
 
     // setting LED pins
@@ -61,10 +63,10 @@ void setLed(const unsigned int bus, const unsigned int color)
     switch(color)
     {
         case 1:
-            buf[2] = 0x60;
+            buf[2] = 0x50;
             break;
         case 2:
-            buf[2] = 0x50;
+            buf[2] = 0x60;
             break;
         case 3:
             buf[2] = 0x30;;
@@ -73,6 +75,7 @@ void setLed(const unsigned int bus, const unsigned int color)
 
     if (write(file, buf, 3) != 3) {
         std::cout << "Writing color failed" << std::endl;
+        exit(1);
     }
 
 }

@@ -16,7 +16,7 @@ void printHelp()
 
 void setVeab(const unsigned int bus, const unsigned int channel, const float value)
 {
-    const float resolution = 0.00245; // 2.45mV/bit, from design doc
+    const float resolution = 0.0024414; // 2.45mV/bit, from design doc
     const unsigned int dacValue = value / resolution; // we lose up to 2.45 mV here, but thats okay
 
     int file;
@@ -42,6 +42,7 @@ void setVeab(const unsigned int bus, const unsigned int channel, const float val
       
     if (write(file, buf, 3) != 3) {
         std::cout << "Writing to device failed" << std::endl;
+        exit(1);
     }
 
 }

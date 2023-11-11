@@ -41,6 +41,7 @@ void getSw(const unsigned int bus)
 
     if (write(file, buf, 3) != 3) {
         std::cout << "Writing IO config failed" << std::endl;
+        exit(1);
     }
 
     // setting GPIO 4, 5, 6 as digital outputs
@@ -50,6 +51,7 @@ void getSw(const unsigned int bus)
 
     if (write(file, buf, 3) != 3) {
         std::cout << "Writing IO config failed (2)" << std::endl;
+        exit(1);
     }
 
     // prepare reading from address
@@ -58,10 +60,12 @@ void getSw(const unsigned int bus)
 
     if (write(file, buf, 2) != 2) {
         std::cout << "Writing read address failed" << std::endl;
+        exit(1);
     }
 
     if (read(file, buf, 1) != 1) {
         std::cout << "Read data failed" << std::endl;
+        exit(1);
     }
 
     if(buf[0] & 0x80)
