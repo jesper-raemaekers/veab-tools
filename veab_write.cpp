@@ -36,7 +36,7 @@ void setVeab(const unsigned int bus, const unsigned int channel, const float val
 
     char buf[3];
 
-    buf[0] = 0x40 + (channel - 1);
+    buf[0] = 0x40 + ((channel - 1) << 1);
     buf[1] = 0x80 + ((dacValue >> 8) & 0xF);
     buf[2] = dacValue & 0xFF;
       
