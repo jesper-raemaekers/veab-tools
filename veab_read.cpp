@@ -16,7 +16,7 @@ void printHelp()
 
 void getVeab(const unsigned int bus, const unsigned int channel)
 {
-    const float resolution = 0.00245117; // 2.45mV/bit, from design doc
+    const float resolution = 0.0024563; // 2.45mV/bit, from design doc
     unsigned int adcReadValue = 0;
     float adcResult = 0.0;
     int file;
