@@ -67,7 +67,7 @@ void getVeab(const unsigned int bus, const unsigned int channel)
     adcReadValue |= (buf[1] >> 4) & 0xF;
 
     adcResult = adcReadValue * resolution;
-    std::cout << buf[0] << "," << buf[1] << "," << adcResult << ","<< std::setprecision(3) << adcResult << std::endl;
+    std::cout << std::to_string(buf[0]) << "," << std::to_string(buf[1]) << "," << adcReadValue << ","<< std::setprecision(3) << adcResult << std::endl;
 }
 
 
