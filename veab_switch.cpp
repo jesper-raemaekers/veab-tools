@@ -10,8 +10,8 @@
 
 void printHelp()
 {
-    std::cout << "USAGE: veabswitch i2c-bus" << std::endl;
-    std::cout << "i2c-bus may be 1, 3, 4, 5 or 6" << std::endl;
+    std::cout << "usage: veabswitch BUS" << std::endl << std::endl;
+    std::cout << "BUS: 1, 3, 4, 5 or 6" << std::endl;
     std::cout << "Example: veabswitch 6" << std::endl;
 }
 

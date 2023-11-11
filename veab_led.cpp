@@ -10,9 +10,9 @@
 
 void printHelp()
 {
-    std::cout << "USAGE: veabled i2c-bus color" << std::endl;
-    std::cout << "i2c-bus may be 1, 3, 4, 5 or 6" << std::endl;
-    std::cout << "channel may be red green blue" << std::endl;
+    std::cout << "usage: veabled BUS COLOR" << std::endl << std::endl;
+    std::cout << "BUS: 1, 3, 4, 5 or 6" << std::endl;
+    std::cout << "COLOR: red green blue" << std::endl;
     std::cout << "Example: veabled 6 red" << std::endl;
 }
 

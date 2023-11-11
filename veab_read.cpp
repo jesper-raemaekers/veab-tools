@@ -8,9 +8,9 @@
 
 void printHelp()
 {
-    std::cout << "USAGE: veabread i2c-bus channel" << std::endl;
-    std::cout << "i2c-bus may be 1, 3, 4, 5 or 6" << std::endl;
-    std::cout << "channel may be 1-4" << std::endl;
+    std::cout << "usage: veabread BUS CHANNEL" << std::endl << std::endl;
+    std::cout << "BUS: 1, 3, 4, 5 or 6" << std::endl;
+    std::cout << "CHANNEL: 1-4" << std::endl;
     std::cout << "Example: veabread 6 1" << std::endl;
 }
 

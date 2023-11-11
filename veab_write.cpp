@@ -7,10 +7,10 @@
 
 void printHelp()
 {
-    std::cout << "USAGE: veabwrite i2c-bus channel value" << std::endl;
-    std::cout << "i2c-bus may be 1, 3, 4, 5 or 6" << std::endl;
-    std::cout << "channel may be 1-4" << std::endl;
-    std::cout << "value 0.0 - 10.0" << std::endl;
+    std::cout << "usage: veabwrite BUS CHANNEL VALUE" << std::endl << std::endl;
+    std::cout << "BUS: 1, 3, 4, 5 or 6" << std::endl;
+    std::cout << "CHANNEL: 1-4" << std::endl;
+    std::cout << "VALUE: 0.0 - 10.0" << std::endl;
     std::cout << "Example: veabwrite 6 1 1.5" << std::endl;
 }
 
